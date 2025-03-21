@@ -1,0 +1,21 @@
+name: PHPUnit
+
+on: workflow_dispatch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Install PHP and PHPUnit
+      run: |
+        sudo apt-get update
+        sudo apt-get install php-cli
+        wget https://phar.phpunit.de/phpunit.phar
+        chmod +x phpunit.phar
+        sudo mv phpunit.phar /usr/local/bin/phpunit
+        
+    - name: Run PHPUnit tests
+      run: phpunit
