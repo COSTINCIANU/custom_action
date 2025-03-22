@@ -1,3 +1,6 @@
+# Ce test ce pour avoir un exemple de confiquration pour linux par exemple.
+# Mai se pas terible comment configuration. 
+
 name: PHPUnit
 
 on: workflow_dispatch
